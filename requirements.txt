@@ -1,4 +1,3 @@
 tensorflow
-PIL
 opencv-python
 scikit-learn
