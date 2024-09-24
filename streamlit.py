@@ -3,20 +3,9 @@ import tensorflow as tf
 import numpy as np
 from PIL import Image
 import cv2
-import requests
 
-from huggingface_hub import from_pretrained_keras
-
-url = 'https://huggingface.co/username/repo-name/resolve/main/model.h5'
-response = requests.get(url)
-# Save the model locally
-with open('model.h5', 'wb') as f:
-    f.write(response.content)
-
-# Load the saved model
-model = tf.keras.models.load_model('model.h5')
 # Load the pre-trained model
-#model = tf.keras.models.load_model('deep-learning\\CNN\\tumor_detection\\results\\model\\cnn_tumor.h5')
+model = tf.keras.models.load_model('cnn_tumor.h5')
 
 def make_prediction(img, model):
     img = Image.fromarray(img)
